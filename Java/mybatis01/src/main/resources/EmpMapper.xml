@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="EmpMapper">
+    <!--
+    namespace一般指定为当前文件的所在包路径+文件名
+	将来在程序中通过[ namespace + id ]定位到执行哪一条SQL语句]
+	并且namespace、id的值不能重复
+
+    不同mapper文件的name值应该保证唯一
+    通过select,insert,delect,update标签声明要执行的SQL语句
+    -->
+
+    <!--练习1:查询emp表中的所有员工信息
+    id用于指定一个唯一一个编号,要求id值在当前文件中不能重复
+    resultType 用于指定一个类型,用该类型封装SQL语句查询的结果
+    即使最终返回的结果是一个集合(List<Emp>),resultType也只需求指定集合中的泛型即可
+    pojo:简单java封装对象  专门用来封装对象
+
+    -->
+    <select id="findAll" resultType="com.tedu.pojo.Emp">
+        <!-- <select id="findAll"   要执行的Sql语句
+
+         resultType="com.tedu.pojo.Emp">  用什么类型封装查询结果com.tedu.pojo.Emp
+         Emp实体的具体操作
+         要求属性名必须一一对应
+         -->
+
+        select *
+        from emp;
+
+    </select>
+    <update id="insert">
+        insert into emp value (null,'刘德华',"歌手",8888);
+
+    </update>
+    <update id="update">
+        update emp
+        set job="演员",
+            salary =88888
+        where name = "刘德华";
+
+    </update>
+    <update id="delete">
+        delete from emp
+        where name = "刘德华";
+
+    </update>
+    <!--
+	resultType：返回值类型，简单类型（例如：Integer，String，Emp等）
+		如果返回集合(List<Emp>)，只需配置集合中的元素类型即可！
+	resultMap：复杂对象结构（例如多表关联查询等），后面用到再讲解
+	 -->
+</mapper>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文档就绪事件函数</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <!--<script>
+        //1.获取id为demo的h1元素
+        let oH1 = document.getElementById("demo");
+        //2.获取h1元素的内容
+        alert(oH1.innerHTML);
+因为代码的执行顺序的原因,代码放在这里将会出现错误,
+所以要对其代码进行修改,把他们放到文档就绪事件函数里面.
+    </script>-->
+    <script>
+        /*方法1:*/
+        window.onload = function () {//JS的文档就绪事件函数
+            //1.获取id为demo的h1元素
+            let oH1 = document.getElementById("demo");
+            //2.获取h1元素的内容
+            alert(oH1.innerHTML);
+
+        }
+        /* 方法2:*/
+        $(function () {
+                //1.获取id为demo的h1元素
+                let oH1 = document.getElementById("demo");
+                //2.获取h1元素的内容
+                alert(oH1.innerHTML);
+
+            }
+        )
+    </script>
+
+</head>
+<body>
+<h1 id="demo">演示文档就绪事件函数...</h1>
+
+</body>
+</html>
