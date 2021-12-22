@@ -2,7 +2,24 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="">
-    
-
+<mapper namespace="EmpMapper">
+    <select id="findAll" resultType="com.tedu.pojo.Emp">
+        select *
+        from emp;
+    </select>
+    <update id="insert">
+        insert into emp
+        values (null, "刘德华", "歌手", 10000);
+    </update>
+    <update id="update">
+        update emp
+        set job="演员",
+            salary=5500
+        where name = "刘德华";
+    </update>
+    <update id="delete">
+        delete
+        from emp
+        where name = "刘德华";
+    </update>
 </mapper>

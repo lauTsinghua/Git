@@ -1,9 +1,9 @@
 package com.tedu.pojo;
 public class Emp {
-private Integer id;
-private String name;
-private String job;
-private Double salary;
+    private Integer id;
+    private String name;
+    private String job;
+    private Double salary;
 
     public Integer getId() {
         return id;

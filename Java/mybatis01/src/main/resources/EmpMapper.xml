@@ -43,7 +43,8 @@
 
     </update>
     <update id="delete">
-        delete from emp
+        delete
+        from emp
         where name = "刘德华";
 
     </update>
@@ -52,4 +53,11 @@
 		如果返回集合(List<Emp>)，只需配置集合中的元素类型即可！
 	resultMap：复杂对象结构（例如多表关联查询等），后面用到再讲解
 	 -->
+    <!--使用占位符#{}查询指定id的员工信息 -->
+    <select id="findById" resultType="com.tedu.pojo.Emp">
+        select *
+        from emp
+        where id = #{id};
+
+    </select>
 </mapper>

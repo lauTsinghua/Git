@@ -1,5 +1,6 @@
 package com.tedu.mybatis;
 
+import com.tedu.pojo.Emp;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -45,6 +46,17 @@ public class TestMybatis02 {
     public void testDelete(){
         int rows = session.update("EmpMapper.delete");
         System.out.println(rows+"行删除成功!");
+
+    }
+
+    /*===================占位符练习=======================**/
+    /**新增员工信息:刘德华 歌手 8888*/
+    @Test
+    public void testFindById(){
+        Integer id=1;
+        Emp emp = session.selectOne("EmpMapper.findById",id);//selectOne("定位标识",参数);
+        System.out.println(emp);
+
 
     }
 }
