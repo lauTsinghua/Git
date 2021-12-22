@@ -60,4 +60,72 @@
         where id = #{id};
 
     </select>
+    <!--使用占位符#{}查询指定id的员工信息
+      /**新增员工信息:用Map进行封装*/
+        map.put("name", "张飞");
+        map.put("job","Java开发工程师");
+        map.put("salary",15000);
+        如果传过来的参数是用map集合封装,将会使用占位符中的名称作为key
+        到map集合中获取对应的value替换占位符,执行插入操作
+        (其实就是用Map里的value替换占位符key)
+    -->
+    <update id="insert2">
+        insert into emp value (null,#{name},#{job},#{salary});
+
+    </update>
+    <!--使用占位符#{}查询指定id的员工信息
+       /**新增员工信息:用pojo进行封装*/
+       Emp emp =new Emp();
+       emp.setName("关羽");
+       emp.setJob("保安");
+       emp.setSalary(8000d);
+       如果传过来的参数是用Emp对象封装的,系统将会通过占位符中的名称自动拼接出对应的getXxx方法,
+       通过getXxx方法获取emp中对应的属性的值
+       name ~ ~emp.getName()获取emp中name属性的值
+       job ~~ emp.getJob()获取emp中job属性的值
+       salary~ ~ emp.getSalary()获取emp中salary属性的值
+(编译器会自动执行getXxx方法获取emp中对应的属性的值)
+    -->
+    <update id="insert3">
+        insert into emp value (null,#{name},#{job},#{salary});
+
+    </update>
+    <!--
+      /**修改员工信息:关羽 为程序员 薪资为 3400用Map进行封装**/
+        Map<String,Object> map=new HashMap<>();
+        map.put("name", "关羽");
+        map.put("job","程序员");
+        map.put("salary",3400);
+    -->
+    <update id="update2">
+        update emp
+        set job=#{job},
+            salary =#{salary}
+        where name = #{name};
+
+    </update>
+    <!--
+     /**修改员工信息:用pojo进行封装*/
+       Emp emp =new Emp();
+       emp.setName("刘德华);
+       emp.setJob("保安");
+       emp.setSalary(8000d);
+-->
+    <update id="update3">
+        update emp
+        set job=#{job},
+            salary =#{salary}
+        where name = #{name};
+
+    </update>
+
+    <!--
+    /**删除员工信息:刘德华 */
+    -->
+    <update id="delete2">
+        delete
+        from emp
+        where id = #{id};
+
+    </update>
 </mapper>
