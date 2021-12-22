@@ -45,16 +45,15 @@ public class TestMybatis04 {
      ***/
     @Test
     public void testFindAll() {
-       // 第一步:获取EmpMapper接口的子类对象/实例
-         /**
-          * 将EmpMapper接口的字节码对象传给getMapper方法,框架底层会根据EmpMapper接口的
-         * 字节码对象,为接口提供一个实现类/子类,再根据实现类/子类创建一个实例并返回
-         * */
+        /*第一步:获取EmpMapper接口的子类对象/实例*/
 
+        //将EmpMapper接口的字节码对象传给getMapper方法,框架底层会根据EmpMapper接口的
         //字节码对象,为接口提供一个实现类/子类,再根据实现类/子类创建一个实例并返回
         EmpMapper empMapper = sqlSession.getMapper(EmpMapper.class);
-        //第二步:调用findAll方法查询所有员工信息
-        //* findAll方法底层如何实现:
+
+        /* 第二步:调用findAll方法查询所有员工信息*/
+
+        //findAll方法底层如何实现:
         // findAll方法底层会根据接口的 [全限定类名+当前方法的名字] 去执行要执行的语句
         List<Emp> list = empMapper.findAll();
         for (Emp emp : list) {
