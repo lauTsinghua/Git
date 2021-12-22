@@ -15,4 +15,7 @@ public interface EmpMapper {
     并且接口中的方法名和SQL标签上的Id值要相同*/
     /**查询emp中所有的员工信息**/
     public List<Emp> findAll();
+    public Integer insert();
+    public Integer update();
+    public Integer delete();
 }
