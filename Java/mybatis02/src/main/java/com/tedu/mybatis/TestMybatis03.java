@@ -38,7 +38,7 @@ public class TestMybatis03 {
             InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);//基build()里的配置信息于创建一个对象
             SqlSession sqlSession = sqlSessionFactory.openSession(true);//用这个对象去自动处理这个事务
-            /*namespace=全限定类名id="当前的方法名"*/
+                                   /*namespace=全限定类名id="当前的方法名"*/
            empMapper = sqlSession.getMapper(EmpMapper.class);
         } catch (IOException e) {
             e.printStackTrace();
