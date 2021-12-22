@@ -12,6 +12,14 @@
     <bean id="empDao" class="com.tedu.dao.EmpDaoImpl"></bean>
 
     <!--将User类声明到spring容器中,由spring容器负责创建对象-->
-    <bean id="user" class="com.tedu.pojo.User"></bean>
+    <bean id="user1" class="com.tedu.pojo.User"></bean>
+
+    <!--
+    scope属性,值默认为singleton,表示通过spring获取当前类的实例是单实例的
+    如果将值改为prototype,则表示通过spring获取当前类的实例是多实例的
+    -->
+
+    <!--将User类声明到spring容器中,由spring容器负责创建对象-->
+    <bean id="user2" class="com.tedu.pojo.User" scope="prototype"></bean>
 
 </beans>
