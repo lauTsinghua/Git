@@ -55,6 +55,10 @@ public class TestMybatis04 {
 
         //findAll方法底层如何实现:
         // findAll方法底层会根据接口的 [全限定类名+当前方法的名字] 去执行要执行的语句
+        /*
+        namespace=全限定类名
+        id="当前的方法名"
+        */
         List<Emp> list = empMapper.findAll();
         for (Emp emp : list) {
             System.out.println(emp);
