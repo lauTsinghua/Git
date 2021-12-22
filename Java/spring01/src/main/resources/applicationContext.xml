@@ -23,4 +23,27 @@
     <bean id="user2" class="com.tedu.pojo.User" scope="prototype"></bean>
     <!--将UserInfo类声明到spring容器中,由spring容器负责创建对象-->
     <bean id="userInfo" class="com.tedu.pojo.UserInfo"></bean>
+
+    <!--将User类声明到spring容器中,由spring容器负责创建对象-->
+    <bean id="user3" class="com.tedu.pojo.User">
+        <!--通过set方法为user对象的属性赋值
+        name="name" value="韩少云"==>setName("韩少云");
+        name="age" value="30"==>setAge(30);
+        ref="一个对象"
+        name="info " ref="userInfo"==>setInfo(UserInfo info);
+        -->
+        <property name="name" value="韩少云"></property>
+        <property name="age" value="30"></property>
+        <property name="info" ref="userInfo"></property>
+    </bean>
+
+    <!--将User类声明到spring容器中,由spring容器负责创建对象-->
+    <bean id="user4" class="com.tedu.pojo.User">
+        <!--通过构造器为user对象的属性赋值
+        name指定的值和User类中有参构造函数上的形参的名字保持一致!!
+      -->
+        <constructor-arg name="name" value="马云"></constructor-arg>
+        <constructor-arg name="age" value="35"></constructor-arg>
+        <constructor-arg name="info" ref="userInfo"></constructor-arg>
+    </bean>
 </beans>

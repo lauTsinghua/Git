@@ -41,4 +41,13 @@ public class User {
     public void setInfo(UserInfo info) {
         this.info = info;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", info=" + info +
+                '}';
+    }
 }
