@@ -17,7 +17,7 @@ public class TestMybatis01_test05 {
     static {
 
         try {
-            InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
+            InputStream inputStream = Resources.getResourceAsStream("MybatisConfig.xml");
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
             sqlSession = sqlSessionFactory.openSession(true);
 

@@ -65,7 +65,7 @@
         map.put("name", "张飞");
         map.put("job","Java开发工程师");
         map.put("salary",15000);
-        如果传过来的参数是用map集合封装,将会使用占位符中的名称作为key
+        如果传过来的参数是用map集合封装,将会使用占位符中的名称作为key,所有的key必须使用String格式
         到map集合中获取对应的value替换占位符,执行插入操作
         (其实就是用Map里的value替换占位符key)
     -->

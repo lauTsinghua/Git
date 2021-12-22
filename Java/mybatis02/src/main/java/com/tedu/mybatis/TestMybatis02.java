@@ -23,7 +23,7 @@ import java.util.List;
  * 如果方法返回的是一个集合,例如List<Emp>,在resultType中只需要指定集合中的泛型,即Emp类型)
  */
 
-public class TestMybatis03 {
+public class TestMybatis02 {
     static EmpMapper empMapper  = null;
 
     static {
@@ -35,7 +35,7 @@ public class TestMybatis03 {
              * 第二步:调用对应方法查询所有员工信息
              * 对应方法底层如何实现:对应方法底层会根据接口的 [全限定类名+当前方法的名字] 去执行要执行的语句
              * */
-            InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
+            InputStream inputStream = Resources.getResourceAsStream("MybatisConfig.xml");
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);//基build()里的配置信息于创建一个对象
             SqlSession sqlSession = sqlSessionFactory.openSession(true);//用这个对象去自动处理这个事务
                                    /*namespace=全限定类名id="当前的方法名"*/

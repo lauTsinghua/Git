@@ -18,7 +18,7 @@ static  SqlSession sqlSession = null;
 
         try {
 
-            InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
+            InputStream inputStream = Resources.getResourceAsStream("MybatisConfig.xml");
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);//基build()里的配置信息于创建一个对象
             sqlSession = sqlSessionFactory.openSession(true);//用这个对象去自动处理这个事务
         } catch (IOException e) {

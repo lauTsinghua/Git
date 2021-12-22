@@ -13,6 +13,10 @@
       <module fileurl="file://$PROJECT_DIR$/mybatis01_test05/mybatis01_test05.iml" filepath="$PROJECT_DIR$/mybatis01_test05/mybatis01_test05.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis01_test06/mybatis01_test06.iml" filepath="$PROJECT_DIR$/mybatis01_test06/mybatis01_test06.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis02/mybatis02.iml" filepath="$PROJECT_DIR$/mybatis02/mybatis02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis02_test01/mybatis02_test01.iml" filepath="$PROJECT_DIR$/mybatis02_test01/mybatis02_test01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis02_test02/mybatis02_test02.iml" filepath="$PROJECT_DIR$/mybatis02_test02/mybatis02_test02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis02_test03/mybatis02_test03.iml" filepath="$PROJECT_DIR$/mybatis02_test03/mybatis02_test03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis02_test04/mybatis02_test04.iml" filepath="$PROJECT_DIR$/mybatis02_test04/mybatis02_test04.iml" />
     </modules>
   </component>
 </project>

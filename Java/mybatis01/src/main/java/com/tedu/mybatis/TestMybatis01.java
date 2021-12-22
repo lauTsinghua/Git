@@ -19,7 +19,7 @@ public class TestMybatis01 {
     /**
      * 练习1: 查询emp表中的所有员工信息
      * 一共5个步骤
-     * 1.读取mybatis的核心配置文件(mybatis-config.xml)
+     * 1.读取mybatis的核心配置文件(MybatisConfig.xml)
      * 2.基于配置信息获取一个SqlSessionFactory工厂对象
      * 3.通过工厂对象获取一个SqlSession对象
      * 4.执行SQL语句(EmpMapper.xml), 接收处理后的结果
@@ -28,8 +28,8 @@ public class TestMybatis01 {
      */
     @Test
     public void findAll() throws Exception {
-        //1.读取mybatis的核心配置文件(mybatis-config.xml)
-        InputStream in = Resources.getResourceAsStream("mybatis-config.xml");
+        //1.读取mybatis的核心配置文件(MybatisConfig.xml)
+        InputStream in = Resources.getResourceAsStream("MybatisConfig.xml");
         //2.基于配置信息获取一个SqlSessionFactory工厂对象
         SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
         //3.通过工厂对象获取一个SqlSession对象

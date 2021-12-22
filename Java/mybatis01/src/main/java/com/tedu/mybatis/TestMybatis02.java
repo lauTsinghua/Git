@@ -21,7 +21,7 @@ public class TestMybatis02 {
         // 对SqlSession 进行初始化
         try {
 
-            InputStream in = Resources.getResourceAsStream("mybatis-config.xml");
+            InputStream in = Resources.getResourceAsStream("MybatisConfig.xml");
             SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
          session = factory.openSession(true);
         } catch (Exception exception) {
