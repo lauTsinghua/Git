@@ -14,7 +14,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * 2、@Bean 用在方法上，告诉Spring容器，你可以从下面这个方法中拿到一个Bean
  */
 public class TestSpring01 {
-    private static ClassPathXmlApplicationContext ac;//定义一个实例
+    private static ClassPathXmlApplicationContext ac;//定义一个变量
 
 
     static {
@@ -41,7 +41,7 @@ public class TestSpring01 {
  * 测试spring bean对象的单实例和多实例
  * */
 @Test
-    public void testBean1(){  //单实例
+    public void testBean1(){  //单实例 uesr1==user2
     //getBean("这里面存放来自applicationContext.xml里对应的id");
     User user1 = (User) ac.getBean("user");
     System.out.println(user1);
