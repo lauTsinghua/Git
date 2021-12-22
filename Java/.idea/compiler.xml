@@ -9,6 +9,7 @@
         <module name="mybatis01_test02" />
         <module name="mybatis01_test01" />
         <module name="mybatis01" />
+        <module name="mybatis02" />
         <module name="mybatis01_test04" />
         <module name="mybatis01_test03" />
         <module name="mybatis01_test06" />
@@ -23,6 +24,7 @@
       <module name="mybatis01_test04" target="8" />
       <module name="mybatis01_test05" target="8" />
       <module name="mybatis01_test06" target="8" />
+      <module name="mybatis02" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
