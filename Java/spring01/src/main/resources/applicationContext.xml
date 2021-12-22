@@ -21,5 +21,6 @@
 
     <!--将User类声明到spring容器中,由spring容器负责创建对象-->
     <bean id="user2" class="com.tedu.pojo.User" scope="prototype"></bean>
-
+    <!--将UserInfo类声明到spring容器中,由spring容器负责创建对象-->
+    <bean id="userInfo" class="com.tedu.pojo.UserInfo"></bean>
 </beans>
