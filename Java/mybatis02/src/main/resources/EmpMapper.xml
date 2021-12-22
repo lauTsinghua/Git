@@ -3,6 +3,11 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--Mapper的接口开发-->
-<mapper namespace="com.tedu.dao.EmpMapper"><!-- namespace=接口的全限定类名-->
+<mapper namespace="com.tedu.dao.EmpMapper"><!--namespace=接口的全限定类名-->
+    <select id="findAll" resultType="com.tedu.pojo.Emp">
+        select *
+        from emp;
+
+    </select>
 
 </mapper>
