@@ -1,6 +1,7 @@
 package com.tedu.spring;
 
 import com.tedu.dao.EmpDao;
+import com.tedu.pojo.User;
 import com.tedu.service.EmpService;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -28,14 +29,27 @@ public class TestSpring01 {
     public void testIOC() {
         //获取spring容器对象,获取EmpService接口的子类实例
         EmpService empService = (EmpService) ac.getBean("empService");
-        //getBean("这里面存放来自applicationContext.xml里对应的Id");
+        //getBean("这里面存放来自applicationContext.xml里对应的id");
         System.out.println(empService);
         //获取spring容器对象,获取EmpDao接口的子类实例
         EmpDao empDao = (EmpDao) ac.getBean("empDao");
-        //getBean("这里面存放来自applicationContext.xml里对应的Id");
+        //getBean("这里面存放来自applicationContext.xml里对应的id");
         System.out.println(empDao);
 
     }
+/**
+ * 测试spring bean对象的单实例和多实例
+ * */
+@Test
+    public void testBean1(){  //单实例
+    //getBean("这里面存放来自applicationContext.xml里对应的id");
+    User user1 = (User) ac.getBean("user");
+    System.out.println(user1);
+    User user2 = (User) ac.getBean("user");
+    System.out.println(user2);
+
+
+}
 
 
 }
