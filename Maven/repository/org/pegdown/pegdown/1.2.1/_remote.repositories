@@ -1,4 +1,4 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Mon Dec 20 11:41:42 CST 2021
-pegdown-1.2.1.pom>nexus-aliyun=
-pegdown-1.2.1.jar>nexus-aliyun=
+#Thu Dec 23 21:01:20 CST 2021
+pegdown-1.2.1.jar>ali=
+pegdown-1.2.1.pom>ali=

@@ -50,7 +50,7 @@ under the License.
    | The path to the local repository maven will use to store artifacts.
    |
    | Default: ${user.home}/.m2/repository
-  <localRepository>/path/to/local/repo</localRepository>
+  <localRepository>D:\Git\Maven\repository</localRepository>
   -->
 
   <!-- interactiveMode
@@ -163,12 +163,12 @@ under the License.
       <url>http://0.0.0.0/</url>
       <blocked>true</blocked>
     </mirror>
-<!--阿里云镜像-->
+<!--阿里私服地址-->
 <mirror>
-<id>nexus-aliyun</id>
-<mirrorOf>*</mirrorOf>
-<name>Nexus aliyun</name>
-<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+	<id>ali</id>
+	<name>ali Maven</name>
+	<mirrorOf>*</mirrorOf>
+	<url>https://maven.aliyun.com/repository/public/</url>
 </mirror>
   </mirrors>
 

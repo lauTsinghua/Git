@@ -1,4 +1,6 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Tue Dec 21 09:28:20 CST 2021
-protobuf-java-3.11.4.jar>nexus-aliyun=
-protobuf-java-3.11.4.pom>nexus-aliyun=
+#Thu Dec 23 20:59:25 CST 2021
+protobuf-java-3.11.4.pom>ali=
+protobuf-java-3.11.4-javadoc.jar>ali=
+protobuf-java-3.11.4-sources.jar>ali=
+protobuf-java-3.11.4.jar>ali=
