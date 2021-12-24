@@ -1,4 +1,6 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Dec 23 20:58:10 CST 2021
+#Thu Dec 23 23:30:40 CST 2021
 https\://maven.aliyun.com/repository/public/.error=
+@default-central-https\://repo.maven.apache.org/maven2/.lastUpdated=1640273440063
 https\://maven.aliyun.com/repository/public/.lastUpdated=1640264290811
+https\://repo.maven.apache.org/maven2/.error=Could not transfer artifact aopalliance\:aopalliance\:jar\:javadoc\:1.0 from/to central (https\://repo.maven.apache.org/maven2)\: transfer failed for https\://repo.maven.apache.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0-javadoc.jar

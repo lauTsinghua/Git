@@ -1,4 +1,8 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Dec 23 22:21:34 CST 2021
+#Fri Dec 24 08:23:31 CST 2021
+spring-core-5.3.13.pom>central=
+spring-core-5.3.13.jar>central=
+spring-core-5.3.13-sources.jar>central=
+spring-core-5.3.13-javadoc.jar>central=
 spring-core-5.3.13.pom>ali=
 spring-core-5.3.13.jar>ali=

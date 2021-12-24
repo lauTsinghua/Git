@@ -1,6 +1,10 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Dec 23 20:59:25 CST 2021
+#Fri Dec 24 08:23:42 CST 2021
+junit-4.13.2.jar>central=
 junit-4.13.2-javadoc.jar>ali=
+junit-4.13.2-javadoc.jar>central=
 junit-4.13.2-sources.jar>ali=
+junit-4.13.2.pom>central=
+junit-4.13.2-sources.jar>central=
 junit-4.13.2.pom>ali=
 junit-4.13.2.jar>ali=
