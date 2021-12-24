@@ -11,6 +11,7 @@
         <module name="mybatis02_test03" />
         <module name="SpringBoot02" />
         <module name="mybatis01_test02" />
+        <module name="SpringBoot03" />
         <module name="mybatis01_test01" />
         <module name="mybatis02_test01" />
         <module name="spring01" />
@@ -43,6 +44,7 @@
       <module name="spring01_test02" target="1.5" />
       <module name="SpringBoot01" target="1.8" />
       <module name="SpringBoot02" target="1.8" />
+      <module name="SpringBoot03" target="1.8" />
       <module name="SpringBoot2" target="1.8" />
     </bytecodeTargetLevel>
   </component>

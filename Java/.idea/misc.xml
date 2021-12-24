@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="org.springframework.beans.factory.annotation.Autowired" />
+    </list>
+  </component>
   <component name="FrameworkDetectionExcludesConfiguration">
     <type id="Spring" />
   </component>
@@ -23,6 +28,7 @@
         <option value="$PROJECT_DIR$/mybatis02_test04/pom.xml" />
         <option value="$PROJECT_DIR$/SpringBoot01/pom.xml" />
         <option value="$PROJECT_DIR$/SpringBoot02/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringBoot03/pom.xml" />
       </list>
     </option>
   </component>

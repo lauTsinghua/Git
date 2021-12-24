@@ -45,11 +45,11 @@ public class DefaultCacheTests {
             System.out.println("@Scope(\"prototype\") 多例模式");
 
     }
-    @PostConstruct
+    @PostConstruct//@PostConstruct Servle的t生命周期方法。在对象加载完依赖注入后执行，用来初始化一下资源。
     public void init(){
         System.out.println("init()");
     }
-    @PreDestroy
+    @PreDestroy//@PreDestroy Servlet的生命周期方法。在对象销毁之前执行，用来释放对象一直持有的资源。
     public void destroy(){
         System.out.println("destroy()");
     }
