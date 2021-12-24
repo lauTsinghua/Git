@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="EmpMapper">
+    <!--
+    namespace一般指定为当前文件的所在包路径+文件名
+	将来在程序中通过[ namespace + id ]定位到执行哪一条SQL语句]
+	并且namespace、id的值不能重复
+
+    不同mapper文件的name值应该保证唯一
+    通过select,insert,delect,update标签声明要执行的SQL语句
+    -->
+
+    <!--练习1:查询emp表中的所有员工信息
+    id用于指定一个唯一一个编号,要求id值在当前文件中不能重复
+    resultType 用于指定一个类型,用该类型封装SQL语句查询的结果
+    即使最终返回的结果是一个集合(List<Emp>),resultType也只需求指定集合中的泛型即可
+    pojo:简单java封装对象  专门用来封装对象
+
+    -->
+    <select id="findAll" resultType="com.tedu.pojo.Emp">
+        <!-- <select id="findAll"   要执行的Sql语句
+
+         resultType="com.tedu.pojo.Emp">  用什么类型封装查询结果com.tedu.pojo.Emp
+         Emp实体的具体操作
+         要求属性名必须一一对应
+         -->
+
+        select *
+        from emp;
+
+    </select>
+    <update id="insert">
+        insert into emp value (null,'刘德华',"歌手",8888);
+
+    </update>
+    <update id="update">
+        update emp
+        set job="演员",
+            salary =88888
+        where name = "刘德华";
+
+    </update>
+    <update id="delete">
+        delete
+        from emp
+        where name = "刘德华";
+
+    </update>
+    <!--
+	resultType：返回值类型，简单类型（例如：Integer，String，Emp等）
+		如果返回集合(List<Emp>)，只需配置集合中的元素类型即可！
+	resultMap：复杂对象结构（例如多表关联查询等），后面用到再讲解
+	 -->
+    <!--使用占位符#{}查询指定id的员工信息 -->
+    <select id="findById" resultType="com.tedu.pojo.Emp">
+        select *
+        from emp
+        where id = #{id};
+
+    </select>
+    <!--使用占位符#{}查询指定id的员工信息
+      /**新增员工信息:用Map进行封装*/
+        map.put("name", "张飞");
+        map.put("job","Java开发工程师");
+        map.put("salary",15000);
+        如果传过来的参数是用map集合封装,将会使用占位符中的名称作为key,所有的key必须使用String格式
+        到map集合中获取对应的value替换占位符,执行插入操作
+        (其实就是用Map里的value替换占位符key)
+    -->
+    <update id="insert2">
+        insert into emp value (null,#{name},#{job},#{salary});
+
+    </update>
+    <!--使用占位符#{}查询指定id的员工信息
+       /**新增员工信息:用pojo进行封装*/
+       Emp emp =new Emp();
+       emp.setName("关羽");
+       emp.setJob("保安");
+       emp.setSalary(8000d);
+       如果传过来的参数是用Emp对象封装的,系统将会通过占位符中的名称自动拼接出对应的getXxx方法,
+       通过getXxx方法获取emp中对应的属性的值
+       name ~ ~emp.getName()获取emp中name属性的值
+       job ~~ emp.getJob()获取emp中job属性的值
+       salary~ ~ emp.getSalary()获取emp中salary属性的值
+(编译器会自动执行getXxx方法获取emp中对应的属性的值)
+    -->
+    <update id="insert3">
+        insert into emp value (null,#{name},#{job},#{salary});
+
+    </update>
+    <!--
+      /**修改员工信息:关羽 为程序员 薪资为 3400用Map进行封装**/
+        Map<String,Object> map=new HashMap<>();
+        map.put("name", "关羽");
+        map.put("job","程序员");
+        map.put("salary",3400);
+    -->
+    <update id="update2">
+        update emp
+        set job=#{job},
+            salary =#{salary}
+        where name = #{name};
+
+    </update>
+    <!--
+     /**修改员工信息:用pojo进行封装*/
+       Emp emp =new Emp();
+       emp.setName("刘德华);
+       emp.setJob("保安");
+       emp.setSalary(8000d);
+-->
+    <update id="update3">
+        update emp
+        set job=#{job},
+            salary =#{salary}
+        where name = #{name};
+
+    </update>
+
+    <!--
+    /**删除员工信息:刘德华 */
+    -->
+    <update id="delete2">
+        delete
+        from emp
+        where id = #{id};
+
+    </update>
+</mapper>

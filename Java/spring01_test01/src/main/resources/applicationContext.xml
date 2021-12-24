@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="user" class="com.tedu.pojo.User" scope="prototype"/>
+    <bean id="user1" class="com.tedu.pojo.User">
+        <property name="name" value="李逍遥"/>
+        <property name="age" value="18"/>
+        <property name="info" ref="info"/>
+    </bean>
+    <bean id="user2" class="com.tedu.pojo.User">
+        <constructor-arg name="name" value="李逍遥"/>
+        <constructor-arg name="age" value="18"/>
+        <constructor-arg name="info" ref="info"/>
+    </bean>
+    <bean id="info" class="com.tedu.pojo.UserInfo"/>
+
+
+</beans>

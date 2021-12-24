@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Java.iml" filepath="$PROJECT_DIR$/.idea/Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBoot01/SpringBoot01.iml" filepath="$PROJECT_DIR$/SpringBoot01/SpringBoot01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis01/mybatis01.iml" filepath="$PROJECT_DIR$/mybatis01/mybatis01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis01_test01/mybatis01_test01.iml" filepath="$PROJECT_DIR$/mybatis01_test01/mybatis01_test01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis01_test02/mybatis01_test02.iml" filepath="$PROJECT_DIR$/mybatis01_test02/mybatis01_test02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis01_test03/mybatis01_test03.iml" filepath="$PROJECT_DIR$/mybatis01_test03/mybatis01_test03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis01_test04/mybatis01_test04.iml" filepath="$PROJECT_DIR$/mybatis01_test04/mybatis01_test04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis01_test05/mybatis01_test05.iml" filepath="$PROJECT_DIR$/mybatis01_test05/mybatis01_test05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis01_test06/mybatis01_test06.iml" filepath="$PROJECT_DIR$/mybatis01_test06/mybatis01_test06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis02/mybatis02.iml" filepath="$PROJECT_DIR$/mybatis02/mybatis02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis02_test01/mybatis02_test01.iml" filepath="$PROJECT_DIR$/mybatis02_test01/mybatis02_test01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis02_test02/mybatis02_test02.iml" filepath="$PROJECT_DIR$/mybatis02_test02/mybatis02_test02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis02_test03/mybatis02_test03.iml" filepath="$PROJECT_DIR$/mybatis02_test03/mybatis02_test03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis02_test04/mybatis02_test04.iml" filepath="$PROJECT_DIR$/mybatis02_test04/mybatis02_test04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring01/spring01.iml" filepath="$PROJECT_DIR$/spring01/spring01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring01_test01/spring01_test01.iml" filepath="$PROJECT_DIR$/spring01_test01/spring01_test01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring01_test02/spring01_test02.iml" filepath="$PROJECT_DIR$/spring01_test02/spring01_test02.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mybatis02_test02" />
+        <module name="SpringBoot01" />
+        <module name="mybatis02_test03" />
+        <module name="mybatis01_test02" />
+        <module name="mybatis01_test01" />
+        <module name="mybatis02_test01" />
+        <module name="spring01" />
+        <module name="spring01_test02" />
+        <module name="spring01_test01" />
+        <module name="mybatis01" />
+        <module name="mybatis02" />
+        <module name="mybatis01_test04" />
+        <module name="mybatis01_test03" />
+        <module name="mybatis01_test06" />
+        <module name="mybatis02_test04" />
+        <module name="mybatis01_test05" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mybatis01" target="8" />
+      <module name="mybatis01_test01" target="8" />
+      <module name="mybatis01_test02" target="8" />
+      <module name="mybatis01_test03" target="8" />
+      <module name="mybatis01_test04" target="8" />
+      <module name="mybatis01_test05" target="8" />
+      <module name="mybatis01_test06" target="8" />
+      <module name="mybatis02" target="8" />
+      <module name="mybatis02_test01" target="8" />
+      <module name="mybatis02_test02" target="8" />
+      <module name="mybatis02_test03" target="8" />
+      <module name="mybatis02_test04" target="8" />
+      <module name="spring01" target="1.5" />
+      <module name="spring01_test01" target="1.5" />
+      <module name="spring01_test02" target="1.5" />
+      <module name="SpringBoot01" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
