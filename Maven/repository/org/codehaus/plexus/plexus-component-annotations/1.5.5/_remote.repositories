@@ -1,4 +1,6 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Dec 23 21:00:17 CST 2021
+#Sat Dec 25 10:32:32 CST 2021
 plexus-component-annotations-1.5.5.pom>ali=
 plexus-component-annotations-1.5.5.jar>ali=
+plexus-component-annotations-1.5.5.jar>central=
+plexus-component-annotations-1.5.5.pom>central=

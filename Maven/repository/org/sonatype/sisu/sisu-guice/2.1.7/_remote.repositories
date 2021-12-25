@@ -1,4 +1,6 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Dec 23 21:01:20 CST 2021
+#Sat Dec 25 10:32:37 CST 2021
 sisu-guice-2.1.7.pom>ali=
 sisu-guice-2.1.7-noaop.jar>ali=
+sisu-guice-2.1.7-noaop.jar>central=
+sisu-guice-2.1.7.pom>central=

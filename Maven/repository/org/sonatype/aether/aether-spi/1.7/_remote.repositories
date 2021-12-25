@@ -1,4 +1,6 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Dec 23 21:01:20 CST 2021
+#Sat Dec 25 10:33:22 CST 2021
 aether-spi-1.7.pom>ali=
 aether-spi-1.7.jar>ali=
+aether-spi-1.7.jar>central=
+aether-spi-1.7.pom>central=

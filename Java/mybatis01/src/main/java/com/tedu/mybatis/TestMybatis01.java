@@ -37,7 +37,7 @@ public class TestMybatis01 {
         SqlSession session = factory.openSession(true);
         //4.执行SQL语句(EmpMapper.xml), 接收处理后的结果
         List<Emp> list = session.selectList("EmpMapper.findAll");
-        /*List<Emp> list = session.selectList("namespace.id");
+        /**List<Emp> list = session.selectList("namespace.id");
          对应EmpMapper.xml文件中的namespace和id属性须唯一
           namespace="EmpMapper" id="findAll"*/
         //5.输出结果
