@@ -3,17 +3,51 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cy.pj.goods.dao.GoodsDao">
+
+    <select id="findAll" resultType="com.cy.pj.goods.dao.Emp">
+        select *
+        from emp;
+    </select>
+
+    <!--===================方案1========================-->
     <delete id="deleteObjects">
-        delete from emp
-        where id in <!--(1,2,3,4,5)-->
-        <foreach collection="ids"
-                 open="("
-                 close=")"
-                 separator=","
-                 item="id">
-            #{id}
-        </foreach>
+        delete from emp where
+        <choose>
+            <!--如果传过来的id为有效值则继续执行删除操作-->
+            <when test="ids!=null and ids.length>0">
+                id in <!--(1,2,3,4)-->
+                <foreach collection="ids"
+                         open="(" close=")"
+                         separator=","
+                         item="id">
+                    #{id}
+                </foreach>
+            </when>
+            <!--否则不执行删除操作-->
+            <otherwise>
+                false
+            </otherwise>
+        </choose>
     </delete>
+    <!--===========方案2不再使用in来查找数据,in对系统消耗较大=============-->
+    <delete id="deleteObjects">
+        delete
+        from emp
+        where
+        <choose>
+            <!--如果传过来的id为有效值则继续执行删除操作-->
+            <when test="ids!=null and ids.length>0">
 
-
+                <foreach collection="ids"
+                         separator="or"
+                         item="id">
+                    id =#{id} <!--id =1 or id =2 id=3 id= 4-->
+                </foreach>
+            </when>
+            <!--否则不执行删除操作-->
+            <otherwise>
+                false
+            </otherwise>
+        </choose>
+    </delete>
 </mapper>

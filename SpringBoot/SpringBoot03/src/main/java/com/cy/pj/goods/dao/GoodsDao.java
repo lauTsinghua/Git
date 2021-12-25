@@ -3,6 +3,9 @@ package com.cy.pj.goods.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Update;
+
+import java.util.List;
 
 
 /**
@@ -17,7 +20,13 @@ import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface GoodsDao {
-    int deleteObjects();
-
     int deleteObjects(@Param("ids") Integer... ids);
+
+    List<Emp> findAll();
+
+    @Update("INSERT INTO emp VALUES (NULL, #{name}, #{job}, #{salary});")
+    int insertObject(Emp emp);
+
+    @Update("update emp set name=#{name} job= #{job} salary=#{salary} where name = 程晓宇;")
+    int updateObject(Emp emp);
 }
