@@ -6,5 +6,39 @@
 </head>
 <body>
 <h1>This is a goods config</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Remark</th>
+        <th>CreatedTime</th>
+    </tr>
+    </thead>
+    <!-- th:each,th:text,${} 由thymeleaf引擎进行定义的
+
+在thymeleaf中数据的循环迭代使用的是th:each="x1:${x2}",
+作用可以取出域中的数据(数组/集合)去进行循环,通常配合th:text="${x1.x3}"使用.
+
+其中x2为域中存储的数据名称;x1为自己定义的名称,用于在页面中使用数据;x3为x2中的属性,要和get方法名一致.
+
+代码如下:
+<tr th:each="g:${list}">
+    <td th:text="${g.id}"></td>
+    <td th:text="${g.name}"></td>
+</tr>
+    -->
+    <tbody>
+    <tr th:each="g:${goods}"><!--
+    g:为自定义名称 g.xx xx必须为goods的属性
+    -->
+        <td th:text="${g.name}"></td>
+        <td th:text="${g.remark}"></td>
+        <td th:text="${#dates.format(g.createdTime,'yyyy/MM/dd HH:mm')}"></td>
+
+    </tr>
+
+
+    </tbody>
+</table>
 </body>
 </html>
