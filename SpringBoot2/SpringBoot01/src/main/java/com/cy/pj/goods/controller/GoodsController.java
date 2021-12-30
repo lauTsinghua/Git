@@ -1,6 +1,7 @@
 package com.cy.pj.goods.controller;
 
-import com.cy.pj.goods.pojo.Goods;
+
+import com.cy.pj.goods.pojo.GoodsPojo;
 import com.cy.pj.goods.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +16,7 @@ import java.util.List;
  * 练习二:基于ID删商品库中的商品信息。
  * 练习三:将页面用户输入的商品信息写入到数据库。
  **/
-
+/***控制层***/
 @Controller
 @RequestMapping("/goods")
 public class GoodsController {
@@ -23,16 +24,26 @@ public class GoodsController {
     @Autowired
     private GoodsService goodsService;
 
+    @RequestMapping ("/doDeleteById") //http://localhost:8080//goods/doDeleteById?id=8
+    public String deleteById(Long id){
+       goodsService.deleteById(id);
+        return "redirect:/goods/doGoodsUI";
+    }
+
+
     @RequestMapping("/doGoodsUI") //url=http://localhost:8080//goods/doGoodsUI
     public String doGoodsUI(Model model) {//向模型添加属性
 
-        List<Goods> list = goodsService.findObejects();
+        List<GoodsPojo> list = goodsService.findObejects();
         model.addAttribute("goods",list);
         return "goods";//返回给调用方，在这里是Dispatcherservlet
 /**
  * DispatcherServlet会将goods字符串交给视图解析器对象(thymeleaf提供)
  * thymeleaf中的视图解析器会对goods字符串添加前缀和后缀
  * **/
+
+
+
 
     }
 }
