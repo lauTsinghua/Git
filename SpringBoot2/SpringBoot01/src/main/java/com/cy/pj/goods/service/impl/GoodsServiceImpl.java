@@ -37,5 +37,11 @@ public class GoodsServiceImpl implements GoodsService {
             return goodsDao.deleteById(id);
 
     }
+
+    @Override
+    public int saveGoods(GoodsPojo entity) {
+        int rows = goodsDao.insertGoods(entity);
+        return rows;
+    }
 }
 
