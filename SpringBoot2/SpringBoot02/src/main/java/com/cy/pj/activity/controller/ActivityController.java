@@ -17,13 +17,26 @@ public class ActivityController {
 
     @Autowired
     private ActivityService activityService;
-@RequestMapping ("doActivityUI")//http://localhost:8080//activity/doActivityUI
-    public String doFindActivitys(Model model) {
+
+    @RequestMapping("activity_list")//http://localhost:8080//activity/activity_list
+    public String doActivityListUI(Model model) {
         List<Activity> list = activityService.findActivitys();
         model.addAttribute("list", list);
 
-        return "activity";
+        return "activity_list";
     }
 
+    @RequestMapping("doInsertActivity")//http://localhost:8080//activity/dodoInsertActivity
+    public String insertActivity(Activity entity) {
+        activityService.insertActivity(entity);
+        return "redirect:activity_list";
+    }
+
+    @RequestMapping("activity_edit")
+    public String doActivityEditUI() {//http://localhost:8080//activity/activity_edit
+
+
+        return "activity_edit";
+    }
 
 }

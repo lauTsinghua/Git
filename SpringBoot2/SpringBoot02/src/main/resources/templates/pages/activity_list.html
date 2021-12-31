@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1>The Activity Page</h1>
+<button onclick="javascript:location.href='http://localhost:8080//activity/activity_edit'">创建活动</button>
 <div>
     <table>
         <thead>
@@ -21,9 +22,9 @@
             <td th:text="${a.id}"></td>
             <td th:text="${a.title}"></td>
             <td th:text="${a.category}"></td>
-            <td th:text="${a.startTime}"></td>
-            <td th:text="${a.endTime}"></td>
-            <td th:text="${a.state}"></td>
+            <td th:text="${#temporals .format(a.startTime,'yyyy/MM/dd HH:mm:ss') }"></td>
+            <td th:text="${#temporals .format(a.endTime,'yyyy/MM/dd HH:mm:ss') }"></td>
+            <td th:text="${a.state==1?'进行中':'已结束'}"></td>
 
         </tr>
 

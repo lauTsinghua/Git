@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输入页面</title>
+    <style type="text/css">
+        ul li {
+            list-style-type: none;
+            margin: 5px
+        }
+    </style>
+</head>
+<body>
+<h1>
+    The Activity Edit Pages
+</h1>
+<form action="doInsertActivity" method="post ">
+    <ul>
+        <li>标题<br/>
+        <input type="text" name="title" >
+        </li>
+        <li>类型<br/>
+            <input type="text" name="category" >
+        </li>
+        <li>开始时间<br/>
+            <input type="text" name="startTime" >
+        </li>
+        <li>结束时间<br/>
+            <input type="text" name="endTime" >
+        </li>
+        <li>备注<br/>
+            <textarea rows="5"  cols="30"  name="remark"></textarea>
+        </li>
+        <li><input type="submit" value="保存"></li>
+
+
+    </ul>
+
+</form>
+</body>
+</html>
