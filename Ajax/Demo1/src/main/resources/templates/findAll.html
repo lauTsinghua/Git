@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>The Activity Page</h1>
-<button onclick="javascript:location.href='activity_edit'">创建活动</button>
+<button onclick="javascript:location.href='edit'">创建活动</button>
 <div>
     <table>
         <thead>
@@ -20,22 +20,7 @@
         <th>operation</th>
         <th>operation</th>
         </thead>
-        <tbody id="tbodyId">
-        <tr>
-            <td colspan="7">Data is Loading</td>
-        </tr>
-        <tr th:each="a:${list}">
-            <td th:text="${a.id}"></td>
-            <td th:text="${a.title}"></td>
-            <td th:text="${a.category}"></td>
-            <td th:text="${#temporals .format(a.startTime,'yyyy/MM/dd HH:mm:ss') }"></td>
-            <td th:text="${#temporals .format(a.endTime,'yyyy/MM/dd HH:mm:ss') }"></td>
-            <td th:text="${a.remark}"></td>
-            <td th:text="${a.state==1?'进行中':'已结束'}"></td>
-            <td><a th:href="@{/activity/doFindById(id=${a.id})}">update</a></td>
-            <td><a th:href="@{/activity/doDeleteById(id=${a.id})}">delete</a></td>
-        </tr>
-        </tbody>
+        <tbody id="tbodyId"> </tbody>
     </table>
 </div>
 <!--通过以下代码进行ajax异步请求-->

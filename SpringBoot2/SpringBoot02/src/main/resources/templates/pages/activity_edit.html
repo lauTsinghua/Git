@@ -16,20 +16,26 @@
 </h1>
 <form action="doInsertActivity" method="post ">
     <ul>
-        <li>标题<br/>
-        <input type="text" name="title" >
+        <li><input type="hidden" name="id" th:value='${act.id}'>
+        <li>标题</li>
+        <li><input type="text" name="title" th:value='${act.title}'>
         </li>
-        <li>类型<br/>
-            <input type="text" name="category" >
+        <li>类型</li>
+        <li><input type="text" name="category" th:value='${act.category}'>
         </li>
-        <li>开始时间<br/>
-            <input type="text" name="startTime" >
+        <li>开始时间</li>
+        <li><input type="text" name="startTime" th:value="${#temporals .format(act.startTime,'yyyy/MM/dd HH:mm:ss')}">
         </li>
-        <li>结束时间<br/>
-            <input type="text" name="endTime" >
+        <li>结束时间</li>
+        <li><input type="text" name="endTime" th:value="${#temporals .format(act.endTime,'yyyy/MM/dd HH:mm:ss')}">
         </li>
-        <li>备注<br/>
-            <textarea rows="5"  cols="30"  name="remark"></textarea>
+        <li>活动状态</li>
+        <li>
+        <li><input type="radio" name="state" th:value=1>进行中
+            <input type="radio" name="state" th:value=0>已结束
+        </li>
+        <li>备注</li>
+        <li><textarea rows="5" cols="30" name="remark" th:text='${act.remark}'></textarea>
         </li>
         <li><input type="submit" value="保存"></li>
 

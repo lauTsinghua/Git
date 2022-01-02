@@ -5,6 +5,9 @@ import com.cy.pj.activity.pojo.Activity;
 import java.util.List;
 
 public interface ActivityService {
-    int insertActivity(Activity entity);
     List <Activity>findActivitys();
+    int insertActivity(Activity entity);
+    Activity findById(Long id);
+    int updateActivity(Activity entity);
+    int deleteById(Long id);
 }
