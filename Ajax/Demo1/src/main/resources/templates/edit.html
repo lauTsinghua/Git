@@ -2,9 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>输入页面</title>
+    <style type="text/css">
+        ul li {
+            list-style-type: none;
+            margin: 5px
+        }
+    </style>
 </head>
 <body>
+<h1>
+    The Activity Edit Pages
+</h1>
+<form enctype="application/x-www-form-urlencoded">
+    <ul>
+        <li>标题</li>
+        <li><input type="text" id="titleId" name="title">
+        </li>
+        <li>类型</li>
+        <li><input type="text" id="categoryId" name="category">
+        </li>
+        <li>开始时间</li>
+        <li><input type="text" id="startTimeId" name="startTime">
+        </li>
+        <li>结束时间</li>
+        <li><input type="text" id="endTimeId" name="endTime">
+        </li>
+        <li>备注</li>
+        <li><textarea rows="5" cols="30" id="remarkId" name="remark"></textarea>
+        </li>
+        <li><input type="button" value="保存" onclick="doSaveActivity()"></li>
+    </ul>
+</form>
+<!--通过以下代码进行ajax异步请求-->
+<script type="text/javascript" src="/js/ajaxframework.js"></script>
+<script type="text/javascript">
 
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    function doSaveActivity() {
+        /*1.定义请求参数*/
+        let title = $("titleId").value;
+        let category = $("categoryId").value;
+        let startTime = $("startTimeId").value;
+        let endTime = $("endTimeId").value;
+        let remark = $("remarkId").value;
+        let params = "title=" + title + "&category=" + category + "&startTimeId=" + startTime + "&endTimeId=" + endTime + "&remarkId=" + remark;
+        /*2.定义请求的url*/
+        let url = "doSaveActivity";
+
+        /*3.发送异步请求 更新数据*/
+    Ajax.doAjaxPost(url, params, function (result) {
+            location.href = "findAll";  /*回到查找页面*/
+
+
+        })
+
+    }
+
+</script>
 </body>
 </html>

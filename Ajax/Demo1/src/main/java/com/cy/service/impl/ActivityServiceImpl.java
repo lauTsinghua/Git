@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.List;
+
+
 @Slf4j
 @Service
 public class ActivityServiceImpl implements ActivityService  {
@@ -19,4 +21,18 @@ public class ActivityServiceImpl implements ActivityService  {
         List<ActivityPojo> list = activityDao.findAll();
         return list;
     }
+
+    @Override
+    public int saveActivity(ActivityPojo entity) {
+        int rows = activityDao.SaveActivity(entity);
+        return rows;
+    }
+
+    @Override
+    public int deleById(Long id) {
+       int rows= activityDao.deleById(id);
+        return rows;
+    }
+
+
 }

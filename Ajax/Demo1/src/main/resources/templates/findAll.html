@@ -15,68 +15,68 @@
         <th>category</th>
         <th>startTime</th>
         <th>endTime</th>
-        <th>remark</th>
         <th>state</th>
         <th>operation</th>
         <th>operation</th>
         </thead>
-        <tbody id="tbodyId"> </tbody>
+        <tbody id="tbodyId">
+        <tr>
+            <td colspan="7">Data is Loading...</td>
+        </tr>
+        </tbody>
     </table>
 </div>
 <!--通过以下代码进行ajax异步请求-->
+<script type="text/javascript" src="/js/ajaxframework.js"></script>
 <script type="text/javascript">
-    function doAjaxGet(url, params, callback) {
 
-        /*1.创建ajax异步请求(这也是ajax技术应用的入口对象)*/
-        let xhr = new XMLHttpRequest();
-        /*2.设置请求,响应过程的状态监听(通过回调函数处理状态变化)*/
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {/*4表示通讯结束,200表示响应成功*/
-                callback(xhr.responseText);
-            }
-        };
-        /*3.创建或打开与服务器端的状态链接(设置同步或者异步)*/
-        xhr.open("Get", url + "?" + params, true);//true表示异步
-        /*4.发送异步请求*/
-        xhr.send(null);/*Get请求send方法进行传递参数*/
-    }
 
     function doGetActivitys() {
         /* 1.定义请求参数*/
-        let params = "";
+        const params = "";
         /* 2.定义请求的url*/
-        let url = "doFindActivitys";
+        const  url = "doFindActivitys";
         /* 3.发送异步请求获取服务器资源并更新到页面*/
-        doAjaxGet(url, params, function (result) {
+        Ajax.doAjaxGet(url, params, function (result) {
             /*  console.log(result)/!*在控制台输出*!/*/
             doHandleReponseResult(result);
         });
     }
 
-    function doHandleReponseResult(result) {
+    function doHandleReponseResult(result) { //JSON String
         /*1.将json格式的字符串转化为json格式的js对象*/
         let jsonObj = JSON.parse(result);
-        /*2.将json对象中的数据更新到页面上*/
+        /*2.将json对象中的数据更新到页面上*///http://localhost:8080//activity/findAll
         let trs = "";
-        for (let i = 0; i < jsonObj.length; i++) {
-
+        for (const row of jsonObj) {
             trs += "<tr>" +
-                "<td>" + jsonObj[i].id + "</td>" +
-                "<td>" + jsonObj[i].title + "</td>" +
-                "<td>" + jsonObj[i].category + "</td>" +
-                "<td>" + new Date(jsonObj[i].startTime).toLocaleString() + "</td>" +
-                "<td>" + new Date(jsonObj[i].endTime).toLocaleString() + "</td>" +
-                "<td>" + (jsonObj[i].state==1? "进行中" : "已结束") + "</td>" +
-                "<td>delete</td>" +
+                "<td>" + row.id + "</td>" +
+                "<td>" + row.title + "</td>" +
+                "<td>" + row.category + "</td>" +
+                "<td>" + new Date(row.startTime).toLocaleString() + "</td>" +
+                "<td>" + new Date(row.endTime).toLocaleString() + "</td>" +
+                "<td>" + (row.state == 1 ? "进行中" : "已结束") + "</td>" +
+                "<td><button onclick=doDeleteById('"+row.id+"')>delete</button> </td>" +
                 "</tr>"
-
         }
         /*将结果更新到页面*/
-        let tBody = document.getElementById("tbodyId");
+        var tBody = document.getElementById("tbodyId");
         tBody.innerHTML = trs;
     }
 
-    doGetActivitys();
+    function doDeleteById(id) {
+        const params = "id=" + id;
+        const url = "doDeleteById";
+        Ajax.doAjaxGet(url, params, function (result) {
+            doGetActivitys();
+        });
+    }
+
+    (function () {
+        doGetActivitys();
+
+    })()
+
 </script>
 </body>
 </html>
