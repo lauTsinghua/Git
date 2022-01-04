@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">日志管理</h3>
+                <div class="box-tools">
+                    <div class="input-group input-group-sm" style="width: 350px;">
+                        <input class="form-control pull-right" id="searchNameId" name="table_search"
+                               placeholder="用户名" type="text">
+
+                        <div class="input-group-btn">
+                            <button class="btn btn-default btn-search" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            <button class="btn btn-default btn-delete" type="button">删除</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th><input id="checkAll" type="checkbox">全选</th>
+                        <th>用户名</th>
+                        <th>操作</th>
+                        <th>请求方法</th>
+                        <th>请求参数</th>
+                        <th>IP</th>
+                        <th>执行时长</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbodyId">
+                    <tr>
+                        <td colspan="7">数据正在加载中...</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="box-footer clearfix" dm="100" id="pageId">
+
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $("#pageId").load("doPageUI");
+
+
+    })
+</script>
+
+
+

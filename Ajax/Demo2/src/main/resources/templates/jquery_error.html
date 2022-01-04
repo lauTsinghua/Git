@@ -27,8 +27,24 @@
             async: true,//同步还是异步,TRUE为异步
             success: function (result) {//回调函数   服务端响应状态为200时,表示成功
                 console.log(result);
+            },
+            error: function () {
+                console.log("error");
+
             }
-        });
+        }).done(function (result) {
+            console.log("done")
+
+        })
+            .fail(function () {
+                console.log("fail")
+
+            })
+            .always(function () {
+                console.log("always")
+
+            });
+
     }
 
     function doGet() {
@@ -36,7 +52,19 @@
         let data = "";
         $.get(url, data, function (result) {   // data表示参数 , function (result)响应函数
             console.log("get.result", result)
-        }, "json");//json 表示返回的值类型
+        }, "json")
+            .done(function () {//json 表示返回的值类型
+                console.log("done")  //代码执行成功
+
+            })
+            .fail(function () {   //代码执行失败
+                console.log("fail")
+
+            })
+            .always(function () { //无论成功失败都必须要执行
+                console.log("always")
+
+            });//json 表示返回的值类型
     }
 
     function doGetJSON() {
@@ -56,12 +84,16 @@
             console.log("post.result", result)
         });
     }
+
     //http://localhost:8080//activity/jquery
-    function doLoad() {
+    function doLoad() {//表示在某个元素的内部发起一个异步的请求,请求的资源为.load();
         let url = "doFindActivitys"
-        $("#container").load(url,function (){
-            console.log("Data load complete")
-        });//表示在某个元素的内部发起一个异步的请求,请求的资源为.load();
+        $("#container").load(url, function (response,status,xhr) {
+           console.log("response",response);
+            console.log("status",status);
+            if (status =="error")
+            console.log("xhr",xhr);
+        });
 
 
     }
