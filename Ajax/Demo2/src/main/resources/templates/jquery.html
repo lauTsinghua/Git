@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<body>
+<h1>The jQuery Page</h1>
+<button onclick="doAjax()">Ajax()</button>
+<button onclick="doGet()">Get()</button>
+<button onclick="doGetJSON()">GetJSON()</button>
+<button onclick="doPost()">Post()</button>
+<button onclick="doLoad()">Load()</button>
+<div id="container">
+
+</div>
+<script type="text/javascript" src="/js/jQuery v3.6.0.min.js"></script>
+<script type="text/javascript">
+    //http://localhost:8080//activity/jquery
+    function doAjax() {
+        $.ajax({
+            type: "GET",
+            url: "doFindActivitys",
+            cache: false,
+            dataType: "json",//response data from server  响应的数据格式
+            data: "",
+            async: true,//同步还是异步,TRUE为异步
+            success: function (result) {//回调函数   服务端响应状态为200时,表示成功
+                console.log(result);
+            }
+        });
+    }
+
+    function doGet() {
+        let url = "doFindActivitys";
+        let data = "";
+        $.get(url, data, function (result) {   // data表示参数 , function (result)响应函数
+            console.log("get.result", result)
+        }, "json");//json 表示返回的值类型
+    }
+
+    function doGetJSON(){
+        let url = "doFindActivitys";
+        let data = "";
+        $.getJSON(url, data, function (result) {   // data表示参数 , function (result)响应函数
+            console.log("get.result", result)
+        });
+
+    }
+
+   function doPost(){
+
+       let url = "doDeleteById";
+       let data = "id=2";
+       $.post(url, data, function (result) {   // data表示参数 , function (result)响应函数
+           console.log("post.result", result)
+       });
+
+   }
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
