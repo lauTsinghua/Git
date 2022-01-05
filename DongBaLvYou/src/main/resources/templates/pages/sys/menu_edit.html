@@ -23,9 +23,9 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label" for="parentId">上级菜单</label>
+                <label class="col-sm-2 control-label" for="parentId">选择菜单</label>
                 <div class="col-sm-10">
-                    <input class="form-control load-sys-menu" id="parentId" placeholder="上级菜单" readonly="readonly"
+                    <input class="form-control load-sys-menu" id="parentId" placeholder="选择菜单" readonly="readonly"
                            type="text">
                 </div>
             </div>
@@ -180,7 +180,7 @@
             console.log("selectNode", selectedNode);
             var rowData = $("#mainContentId").data("rowData");
             if (rowData) {//修改时做如下处理
-                //判定当前选中的上级菜单节点是否为当前要修改节点的子节点.
+                //判定当前选中的选择菜单节点是否为当前要修改节点的子节点.
                 var flag = isChild(rowData.id, selectedNode);
                 if (flag) {
                     alert("不能选择当前节点以及对应子节点");

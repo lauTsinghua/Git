@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cy.pj.sys.dao.SysMenuDao">
+
+    <!--添加字段-->
+    <insert id="insertObject" parameterType="com.cy.pj.sys.entity.SysMenu">
+        insert into sys_menus
+        (name, url, type, sort, note, parentId, permission,
+         createdTime, modifiedTime, createdUser, modifiedUser)
+        values (#{name}, #{url}, #{type}, #{sort}, #{note}, #{parentId},
+                #{permission}, now(), now(), #{createdUser}, #{modifiedUser})
+
+
+    </insert>
+
+    <!--基于菜单id修改菜单以及菜单对应的关系数据-->
+    <update id="updateObject" parameterType="com.cy.pj.sys.entity.SysMenu">
+        update sys_menus
+        set name=#{name},
+            url=#{url},
+            type=#{type},
+            sort=#{sort},
+            note=#{note},
+            parentId=#{parentId},
+            permission= #{permission},
+            createdTime=now(),
+            modifiedTime= now(),
+            createdUser=#{createdUser},
+            modifiedUser= #{modifiedUser}
+        where id = #{id}
+
+    </update>
+
+
+    <!--获取所有菜单信息，包含当前菜单对应的选择菜单的菜单名称-->
+    <select id="findObjects" resultType="map">
+
+        /*多表关联的字关联
+        select c.*, p.name as parentName
+        from sys_menus as c
+        left join sys_menus as p
+        on c.parentId = p.id
+        */
+
+        <!--方案2 -->
+        select c.* , (select name
+        from sys_menus p
+        where c.parentId=p.id) parentName
+        from sys_menus c
+
+    </select>
+
+
+</mapper>

@@ -15,7 +15,7 @@ spring:
     password: root
   thymeleaf:
     prefix: classpath:/templates/pages/
-    cache: false
+    cache: true
 #mybatis
 mybatis:
   configuration:

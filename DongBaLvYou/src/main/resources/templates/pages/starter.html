@@ -335,7 +335,7 @@ desired effect
                 <h3 class="control-sidebar-heading">Recent Activity</h3>
                 <ul class="control-sidebar-menu">
                     <li>
-                        <a href="javascript:;">
+                        <a href="javascript:">
                             <i class="menu-icon fa fa-birthday-cake bg-red"></i>
                             <div class="menu-info">
                                 <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
@@ -349,7 +349,7 @@ desired effect
                 <h3 class="control-sidebar-heading">Tasks Progress</h3>
                 <ul class="control-sidebar-menu">
                     <li>
-                        <a href="javascript:;">
+                        <a href="javascript:">
                             <h4 class="control-sidebar-subheading">
                                 Custom Template Design
                                 <span class="pull-right-container">
@@ -424,6 +424,7 @@ desired effect
 <script type="text/javascript">
     $(function () {//页面加载完成之后执行
         doLoadUI("load-log-id", "log/log_list");
+        doLoadUI("load-menu-id", "menu/menu_list");
 
     });
 
@@ -433,7 +434,7 @@ desired effect
         //  $("#mainContentId").load(url);
         //}
         $("#" + id).click(function () {//事件处理函数
-            console.log("====");
+            //    console.log("====");
             //load函数为一个jquery中的ajax函数,其作用是将url对应的资源，异步加载到指定位置
             //此处表示在mainContentId对应的对象位置异步加载url指定资源
             $("#mainContentId").load(url);

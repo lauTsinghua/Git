@@ -32,7 +32,7 @@ public interface SysLogDao {
      * @param pageSize   页面大小(每页最多显示多少条记录)
      * @return 当前页的用户行为日志
      */
-    List<SysLog> findPageObjects(String username, long startIndex, int pageSize);
+    List<SysLog> findPageObjects(String username, long startIndex, Integer pageSize);
 }
 
 
