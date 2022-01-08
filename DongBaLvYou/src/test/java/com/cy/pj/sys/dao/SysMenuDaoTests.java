@@ -1,6 +1,5 @@
 package com.cy.pj.sys.dao;
 
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,16 +9,18 @@ import java.util.Map;
 
 @SpringBootTest
 public class SysMenuDaoTests {
-    @Autowired
-    private SysMenuDao sysMenuDao;
 
-    @Test
-    public void testFindObjects() {
-        List<Map<String, Object>> list = sysMenuDao.findObjects();
-
-        for (Map<String, Object> map : list) {
-            System.out.println(map);
-        }
-        System.out.println(list.size());
-    }
+	@Autowired
+	private SysMenuDao sysMenuDao;
+	
+	@Test
+	public void testFindObjects() {
+		List<Map<String,Object>> list=
+		sysMenuDao.findObjects();
+		for(Map<String,Object> map:list) {
+			System.out.println(map);
+		}
+		System.out.println(list.size());
+	}
+	
 }

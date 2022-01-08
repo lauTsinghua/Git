@@ -5,35 +5,26 @@ import lombok.Data;
 import java.io.Serializable;
 import java.util.Date;
 
+//@Setter
+//@Getter
+//@ToString
 @Data
-/*只要用于存储对象的数据,我们都让他实现序列化接口*/
-public class SysLog implements Serializable {
-    private static final long serialVersionUID = 0b1111111111111111111111111111111;
-    private Integer id;
-    private String username;
-    /**
-     * 用户名
-     */
-    private String operation;
-    /**
-     * 用户操作
-     */
-    private String method;
-    /**
-     * 请求方法
-     */
-    private String params;
-    /**
-     * 请求参数
-     */
-    private Long time;
-    /**
-     * 执行时间
-     */
-    private String ip;
-    /**
-     * ip地址
-     */
-    private Date createdTime;/**创建时间*/
+public class SysLog implements Serializable{
+	private static final long serialVersionUID = 8924387722922123121L;
+	private Long id;//null
+	/**用户名*/
+	private String username;
+	//用户操作
+	private String operation;
+	//请求方法
+	private String method;
+	//请求参数
+	private String params;
+	//执行时长(毫秒)
+	private Long time;
+	//IP地址
+	private String ip;
+	//创建时间
+	private Date createdTime;
 
 }

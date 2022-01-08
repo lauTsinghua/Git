@@ -11,30 +11,53 @@ import java.util.Map;
 
 @Mapper
 public interface SysMenuDao {
-    /**
-     * 获取所有的菜单信息,包括当前菜单对应的选择菜单
-     */
-    List<Map<String, Object>> findObjects();
-
-    /**
-     * 查询菜单的id,name , parentName
-     */
-    @Select("select id,name,parentId from sys_menus")
-    List<Node> findZtreeMenuNodes();
-
-    /**
-     * 根据id进行字段删除
-     */
-    @Delete("delete from sys_menus where id=#{id}")
-    int deleteobject(Integer id);
-
-    /**
-     * 添加菜单对象里的字段
-     */
-    int insertObject(SysMenu entity);
-
-    /**
-     * 修改菜单对象的字段
-     */
-    int updateObject(SysMenu entity);
+	
+	int updateObject(SysMenu entity);
+	
+	 /**
+	  * 持久化菜单对象
+	  * @param entity
+	  * @return
+	  */
+	 int insertObject(SysMenu entity);
+	
+	 /**
+	  * 查询菜单的id,name,parentName
+	  * @return
+	  */
+	  @Select("select id,name,parentId from sys_menus")
+	  List<Node>findZtreeMenuNodes();
+	
+	  /**
+	   * 基于菜单统计子菜单的个数
+	   * @param id 菜单id
+	   * @return 子菜单的个数
+	   */
+	  @Select("select count(*) from sys_menus where parentId=#{id}")
+	  int getChildCount(Integer id);
+	  
+	  /**
+	   * 基于菜单id删除菜单自身信息
+	   * @param id
+	   * @return
+	   */
+	  @Delete("delete from sys_menus where id=#{id}")
+	  int deleteObject(Integer id);
+	
+      /**
+       * 获取所有菜单信息，包含当前菜单对应的上级菜单的菜单名称
+       * @return
+       */
+	  List<Map<String,Object>> findObjects();
 }
+
+
+
+
+
+
+
+
+
+
+

@@ -10,21 +10,21 @@ import java.util.List;
 @SpringBootTest
 public class SysLogDaoTests {
 
-    //@Resource
-    @Autowired
-    private SysLogDao sysLogDao;
-
-    @Test
-    public void testGetRowCount() {
-        long rowCount = sysLogDao.getRowCount(null);
-        System.out.println("rowCount=" + rowCount);
-    }
-
-    @Test
-    public void testFindPageObjects() {
-        List<SysLog> list = sysLogDao.findPageObjects("xiao", 0, 5);
-        for (SysLog log : list) {
-            System.out.println(log);
-        }
-    }
+	  //@Resource
+	  @Autowired
+	  private SysLogDao sysLogDao;
+	  @Test
+	  public void testGetRowCount() {
+		  long rowCount=
+		  sysLogDao.getRowCount("admin");
+		  System.out.println("rowCount="+rowCount);
+	  }
+	  @Test
+	  public void testFindPageObjects() {
+		  List<SysLog> list=
+		  sysLogDao.findPageObjects("xiao",0, 5);
+		  for(SysLog log:list) {
+			  System.out.println(log);
+		  }
+	  }
 }

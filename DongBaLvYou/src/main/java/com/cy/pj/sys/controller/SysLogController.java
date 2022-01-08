@@ -1,6 +1,5 @@
 package com.cy.pj.sys.controller;
 
-
 import com.cy.pj.common.vo.JsonResult;
 import com.cy.pj.common.vo.PageObject;
 import com.cy.pj.sys.entity.SysLog;
@@ -8,39 +7,40 @@ import com.cy.pj.sys.service.SysLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.management.ServiceNotFoundException;
-
-
-@RequestMapping("/log/")
 @Controller
+@RequestMapping("/log/")
 public class SysLogController {
 
-    @Autowired
-    private SysLogService sysLogService;
+	 @Autowired
+	 private SysLogService sysLogService;
+	 
+	 //http://localhost/log/doDeleteObjects?ids=1,2,3
+	 @RequestMapping("doDeleteObjects")
+	 @ResponseBody
+	 public JsonResult doDeleteObjects(int... ids) {
+		 sysLogService.deleteObjects(ids);
+		 return new JsonResult("delete ok");
+	 }
 
-    @RequestMapping("doFindPageObjects")
-    @ResponseBody
-    public JsonResult doFindPageObjects(String username, Long pageCurrent) {
-        //http://localhost:8080/log/doFindPageObjects?pageCurrent=1
-        PageObject<SysLog> pageObject = sysLogService.findPagesObject(username, pageCurrent);
-
-        return new JsonResult(pageObject);
-    }
-
-    @RequestMapping("doDeleteObjects")
-    @ResponseBody
-    public JsonResult doDeletObjects(int... ids) {
-        //http://localhost:8080/log/doDeleteObjects?ids=1
-        try {
-            sysLogService.deleteObjects(ids);
-        } catch (ServiceNotFoundException e) {
-            e.printStackTrace();
-        }
-        return new JsonResult("删除成功");
-
-
-    }
-
+	//http://localhost:8080/doIndexUI
+	 @RequestMapping(value="doFindPageObjects",method = RequestMethod.GET)
+	 @ResponseBody
+	 public JsonResult doFindPageObjects(String username,Long pageCurrent)throws Exception {
+		 PageObject<SysLog> pageObject=sysLogService.findPageObjects(username, pageCurrent);
+		// JsonResult jsonResult=new JsonResult();
+		// jsonResult.setData(pageObject);
+		 return new JsonResult(pageObject);
+	 }//
+	 
+//	 @ExceptionHandler(RuntimeException.class)
+//	 @ResponseBody
+//	 public JsonResult doHandleRuntimeException(RuntimeException e) {
+//		 System.out.println("SysLogController.doHandleRuntimeException");
+//		 e.printStackTrace();
+//		 return new JsonResult(e);
+//	 }
+	 
 }

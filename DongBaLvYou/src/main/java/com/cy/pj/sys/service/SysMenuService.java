@@ -7,26 +7,26 @@ import java.util.List;
 import java.util.Map;
 
 public interface SysMenuService {
+	/**
+	 * 更新菜单信息
+	 * @param entity
+	 * @return
+	 */
+	int updateObject(SysMenu entity);
+	/**
+	 * 保存菜单信息
+	 * @param entity
+	 * @return
+	 */
+	int saveObject(SysMenu entity);
+	
+	List<Node>findZtreeMenuNodes();
+	 /**
+	  * 基于菜单id删除菜单以及菜单对应的关系数据
+	  * @param id
+	  * @return
+	  */
+	 int deleteObject(Integer id);
 
-    List<Map<String, Object>> findObjects();
-
-    /**
-     * 查询上级菜单信息
-     */
-    List<Node> findZtreeMenuNodes();
-
-    /**
-     * 基于菜单id删除菜单以及菜单对应的关系数据
-     */
-    int deleteobject(Integer id);
-
-    /**
-     * 添加菜单信息
-     */
-    int saveObject(SysMenu entity);
-
-    /**
-     * 基于菜单id修改菜单以及菜单对应的关系数据
-     */
-    int updateObject(SysMenu entity);
+	 List<Map<String,Object>> findObjects();
 }
