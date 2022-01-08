@@ -18,8 +18,13 @@
         <java.version>1.8</java.version>
         <skipTests>true</skipTests>
     </properties>
-
+    <!--第三方加密-->
     <dependencies>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.7.1</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>

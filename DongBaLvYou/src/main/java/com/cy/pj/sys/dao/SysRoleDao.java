@@ -1,15 +1,27 @@
 package com.cy.pj.sys.dao;
 
+import com.cy.pj.common.vo.CheckBox;
 import com.cy.pj.sys.entity.SysRole;
 import com.cy.pj.sys.vo.SysRoleMenuVo;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
 @Mapper
 public interface SysRoleDao {
+@Select("select id,name from sys_roles")
+List <CheckBox> findObjects();//获取所有角色的id和name
+
+
+
+
+
+
+
+
 	
 	  SysRoleMenuVo findObjectById(Integer id);
 
@@ -18,7 +30,13 @@ public interface SysRoleDao {
 	   * @param entity
 	   * @return
 	   */
-	  @Update("update sys_roles set name=#{name},note=#{note},modifiedTime=now(),modifiedUser=#{modifiedUser} where id=#{id}")
+	  int insertObject(SysRole entity);
+	/**
+	 * 基于角色id删除角色自身信息
+	 * @param id
+	 * @return
+	 */
+	@Update("update sys_roles set name=#{name},note=#{note},modifiedTime=now(),modifiedUser=#{modifiedUser} where id=#{id}")
 	  int updateObject(SysRole entity);
 	  
 	  /**
@@ -26,12 +44,7 @@ public interface SysRoleDao {
 	   * @param entity
 	   * @return
 	   */
-	  int insertObject(SysRole entity);
-	  /**
-	   * 基于角色id删除角色自身信息
-	   * @param id
-	   * @return
-	   */
+
 	   @Delete("delete from sys_roles where id=#{id}")
 	   int deleteObject(Integer id);
        /**
