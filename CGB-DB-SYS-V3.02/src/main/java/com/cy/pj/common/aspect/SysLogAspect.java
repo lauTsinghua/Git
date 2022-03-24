@@ -35,7 +35,7 @@ import lombok.extern.slf4j.Slf4j;
 public class SysLogAspect {
 	/**
 	 * @Pointcut 注解一般用于描述方法，在方法上定义切入点。
-	 * bean(sysUserServiceImpl) 为一个切入点biao'da'shi
+	 * bean(sysUserServiceImpl) 为一个切入点 表达式
 	 */
 	 //@Pointcut("bean(sysUserServiceImpl)")
 	 @Pointcut("@annotation(com.cy.pj.common.annotation.RequiredLog)")
