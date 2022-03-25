@@ -3,6 +3,7 @@ package com.cy.pj.common.config;
 
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.realm.Realm;
+import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.context.annotation.Bean;
@@ -14,11 +15,10 @@ import java.util.LinkedHashMap;
 public class SpringShiroConfig {
     /**
      * 配置shiro的核心对象：安全管理器
-     *
      **/
     @Bean//由此注解描述的方法会交给spring框架管理，默认bean的名字为方法名
     public SecurityManager securityManager(Realm realm) {
-        DefaultWebSecurityManager securityManager= new DefaultWebSecurityManager();
+        DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         securityManager.setRealm(realm);
         return securityManager;
 
@@ -49,4 +49,17 @@ public class SpringShiroConfig {
         sBean.setFilterChainDefinitionMap(map);
         return sBean;
     }
+
+    //==========================Shiro框架中授权配置===========================
+//Shiro框架中授权配置是基于Spring框架
+    @Bean
+    public AuthorizationAttributeSourceAdvisor
+    authorizationAttributeSourceAdvisor(SecurityManager securityManager) {
+        AuthorizationAttributeSourceAdvisor advisor = new AuthorizationAttributeSourceAdvisor();
+        advisor.setSecurityManager(securityManager);
+
+        return advisor;
+    }
+
+
 }
