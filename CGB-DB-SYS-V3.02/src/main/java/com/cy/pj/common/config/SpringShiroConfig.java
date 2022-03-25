@@ -2,6 +2,7 @@ package com.cy.pj.common.config;
 
 
 import org.apache.shiro.mgt.SecurityManager;
+import org.apache.shiro.realm.Realm;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.context.annotation.Bean;
@@ -14,11 +15,11 @@ public class SpringShiroConfig {
     /**
      * 配置shiro的核心对象：安全管理器
      *
-     * @return
      **/
     @Bean//由此注解描述的方法会交给spring框架管理，默认bean的名字为方法名
-    public DefaultWebSecurityManager securityManager() {
-        DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
+    public SecurityManager securityManager(Realm realm) {
+        DefaultWebSecurityManager securityManager= new DefaultWebSecurityManager();
+        securityManager.setRealm(realm);
         return securityManager;
 
     }
@@ -41,6 +42,8 @@ public class SpringShiroConfig {
         map.put("/build/**", "anon");
         map.put("/dist/**", "anon");
         map.put("/plugins/**", "anon");
+        map.put("/user/doLogin", "anon");//登录
+        map.put("/doLogout", "logout");//退出 ,有shiro框架提供
         //除了匿名访问的资源，其他都要认证（“authc”）后访问
         map.put("/**", "authc");
         sBean.setFilterChainDefinitionMap(map);
