@@ -42,6 +42,7 @@ public class ShiroUserRealm extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(
             PrincipalCollection principals) {
+        System.out.println("=======测试打印每次授权访问是否要重新访问这几张表==========");
         //1.获取登录用户身份信息
         SysUser user = (SysUser) principals.getPrimaryPrincipal();
 
